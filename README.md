@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# Fullstack Test Triv
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React + TypeScript single-page application built with Vite for a Triv technical test.
 
-Currently, two official plugins are available:
+The project contains two main sections:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Supermarket** — a simple product listing with cart functionality.
+- **Trading Fest** — a responsive landing page for Triv Trading Competition.
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+https://fullstack-test-triv.vercel.app
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Recoil
+- Lucide React
+- Vercel
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Supermarket
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Display product list
+- Add products to cart
+- Increase quantity when adding the same product
+- Remove product from cart
+- Clear all cart items
+- Calculate total cart price
+- Persist cart data in `localStorage`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Trading Fest Landing Page
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Responsive landing page
+- Hero section
+- Rewards section
+- Leaderboard section
+- Registration call-to-action
+- FAQ accordion
+- Optimized image assets using WebP
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Routing
+
+| Path | Page |
+|---|---|
+| `/` | Supermarket page |
+| `/cart` | Cart page |
+| `/tradingfest` | Trading Fest landing page |
+| `*` | Not found page |
